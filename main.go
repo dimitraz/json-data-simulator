@@ -20,7 +20,7 @@ type Response struct {
 func main() {
 	for i := 1; i <= 50; i++ {
 		// fmt.Printf("%.2f \n", temperature())
-		fmt.Println(heartRate())
+		fmt.Println(spo2())
 	}
 }
 
@@ -54,6 +54,17 @@ func heartRate() int {
 	// be between 33 and 50 bpm
 	max := 95
 	min := 28
+
+	sample := rand.Intn(max-min) + min
+	return sample
+}
+
+// SpO2 is the measurement of the amount of oxygen in the blood
+// normal SpO2 values vary between 95 and 100%
+// TODO: would be good to favour larger numbers (more common)
+func spo2() int {
+	max := 100
+	min := 90
 
 	sample := rand.Intn(max-min) + min
 	return sample
