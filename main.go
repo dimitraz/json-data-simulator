@@ -14,7 +14,7 @@ type Response struct {
 	HeartRate   int    `json:"heartrate",omitempty`
 	RespRate    int    `json:"resprate",omitempty`
 	BP          int    `json:"bp",omitempty`
-	SO2         int    `json:"so2",omitempty`
+	SpO2        int    `json:"spo2",omitempty`
 }
 
 func main() {
