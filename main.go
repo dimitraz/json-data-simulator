@@ -69,3 +69,10 @@ func spo2() int {
 	sample := rand.Intn(max-min) + min
 	return sample
 }
+
+// bp generates a random blood pressure value and returns systolic pressure and
+// diastolic pressure measured in millimeters of mercury (mmHg)
+// Normal resting blood pressure in an adult is 120/80 mmHg
+func bp() (int, int) {
+	return 0, 0
+}
