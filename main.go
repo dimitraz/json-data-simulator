@@ -1,10 +1,21 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math"
 	"math/rand"
 )
+
+var (
+	age    int
+	gender string
+)
+
+func init() {
+	flag.IntVar(&age, "age", 0, "Patient's age")
+	flag.StringVar(&gender, "gender", "", "Patient's gender")
+}
 
 type Response struct {
 	ID          string `json:"id",omitempty`
@@ -18,6 +29,10 @@ type Response struct {
 }
 
 func main() {
+	flag.Parse()
+	fmt.Println("Patient's age", age)
+	fmt.Println("Patient's gender", gender)
+
 	for i := 1; i <= 50; i++ {
 		// fmt.Printf("%.2f \n", temperature())
 		fmt.Println(spo2())
