@@ -9,12 +9,16 @@ import (
 
 var (
 	age    int
+	weight int
+	height int
 	gender string
 )
 
 func init() {
 	flag.IntVar(&age, "age", 0, "Patient's age")
-	flag.StringVar(&gender, "gender", "", "Patient's gender")
+	flag.IntVar(&weight, "weight", 0, "Patient's weight in kg")
+	flag.IntVar(&height, "height", 0, "Patient's height in cm")
+	flag.StringVar(&gender, "gender", "", "Patient's gender (f/m)")
 }
 
 type Response struct {
@@ -32,6 +36,8 @@ func main() {
 	flag.Parse()
 	fmt.Println("Patient's age", age)
 	fmt.Println("Patient's gender", gender)
+	fmt.Println("Patient's weight", weight)
+	fmt.Println("Patient's height", height)
 
 	for i := 1; i <= 50; i++ {
 		// fmt.Printf("%.2f \n", temperature())
